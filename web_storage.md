@@ -1,0 +1,11 @@
+Storage
+    -> Local Storage
+        - Armazena dados no navegador de forma persistente.
+    -> Session Storage
+        - Armazena dados no navegador enquanto estiver aberto (temporário).
+    -> IndexedDB
+        -> Criação de tabelas, dentre outros.
+    -> Web SQL
+        -> Utilização de dados maiores.    
+    -> Cookies
+        - É trabalhado no backend da aplicação e utilizado através de requisições http.
