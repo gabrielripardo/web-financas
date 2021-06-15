@@ -3,20 +3,20 @@
     <meta charset="utf-8" />
 		<title>Orçamento pessoal</title>
 
-		<!-- Bootstrap início -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<!-- Bootstrap início -->		
+		<link rel="stylesheet" href="/bootstrap-5.0.1-dist/css/bootstrap.min.css">
+    <script src="/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>    
     <!-- Bootstrap fim -->
+
+    <!-- Jquery -->
+    <script src="./jquery-3.6.0.min.js"></script>
 
     <!-- Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="app.js"></script>
 	</head>
 
-  <body>
+  <body onload="carregaListaDespesas()">
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
@@ -101,8 +101,8 @@
         </div>
 
         <div class="col-md-2 d-flex justify-content-end">
-          <button type="button" class="btn btn-primary">
-            <i class="fas fa-search"></i>
+          <button type="button" class="btn btn-primary" onclick="pesquisarDespesa()">
+            Pesquisar <i class="fas fa-search"></i> 
           </button>
         </div>
       </div>
@@ -120,9 +120,26 @@
               </tr>
             </thead>
 
-            <tbody>
+            <tbody id="listaDespesas">              
             </tbody>
           </table>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modalCadastrar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div id="m-header" class="modal-header">
+            <h5 class="modal-title" id="m-title"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p id="m-body"></p>          
+          </div>
+          <div class="modal-footer">          
+            <button id="m-btn" type="button" class=""  data-bs-dismiss="modal"></button>
+          </div>
         </div>
       </div>
     </div>
